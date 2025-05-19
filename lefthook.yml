@@ -1,4 +1,4 @@
-# lefthook.yml — Tenzr Health Git hooks
+# lefthook.yml
 colors:
   red:   '#E6D8FF'
   green: '#DFF8F4'
@@ -12,3 +12,12 @@ commit-msg:
         ⛔  Commit message format incorrect.
         👉  Must be **[Task|Feature|Bug|Fix|Test|Refactor]: <lowercase summary>**
         💡  Example: `Fix: handle null input in auth service`
+
+pre-push: # Add this new section
+  scripts:
+    "hello-world.sh": # This is the name of your script file
+      runner: bash
+      # You can add other options here if needed in the future, for example:
+      # fail_text: "🚫 Custom pre-push check failed!"
+      # env:
+      #   MY_VARIABLE: "some_value"
