@@ -1,17 +1,14 @@
-# lefthook.yml ── Tenzr Health Git hooks
+# lefthook.yml — Tenzr Health Git hooks
 colors:
-  red:   '#E6D8FF'   # lavender brand colour
-  green: '#DFF8F4'   # mint brand colour
+  red:   '#E6D8FF'
+  green: '#DFF8F4'
 output: [summary, failure, execution_out]
 
 commit-msg:
-  only:  
-    - commit
-    - ammend       
   commands:
     validate-message:
       run: yarn commitlint --edit {1}
-      fail_text: |-
+      fail_text: |
         ⛔  Commit message format incorrect.
         👉  Must be **[Task|Feature|Bug|Fix|Test|Refactor]: <lowercase summary>**
         💡  Example: `Fix: handle null input in auth service`
